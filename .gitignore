@@ -1,0 +1,18 @@
+# Terraform
+terraform/.terraform/
+terraform/*.tfplan
+terraform/tfplan
+terraform/lambda.zip
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if you add dependencies later)
+node_modules/
+.kys
+/.claude
