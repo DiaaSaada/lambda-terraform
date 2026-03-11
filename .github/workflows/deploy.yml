@@ -30,6 +30,16 @@ jobs:
         working-directory: terraform
         run: terraform init
 
+      # TODO: Add S3 backend for proper Terraform state persistence
+      # This import step is a workaround since state is lost between runs
+      - name: Import existing resources
+        working-directory: terraform
+        run: |
+          terraform import aws_iam_role.lambda_role products-api-role || true
+          terraform import aws_lambda_function.api products-api || true
+          terraform import aws_lambda_function_url.api_url products-api || true
+          terraform import aws_apigatewayv2_api.api $(aws apigatewayv2 get-apis --query "Items[?Name=='products-api-api'].ApiId" --output text) || true
+
       - name: Terraform Plan
         working-directory: terraform
         run: terraform plan -out=tfplan
