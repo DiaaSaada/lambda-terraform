@@ -9,7 +9,7 @@ A simple REST API deployed to AWS Lambda with API Gateway, automated via Terrafo
 | GET | /products | List all products |
 | POST | /products | Create a product |
 | GET | /products/{id} | Get product by ID |
-| GET | /cars | List cars |
+| GET | /categories | List categories |
 
 ## Setup
 

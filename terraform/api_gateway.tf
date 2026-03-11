@@ -35,9 +35,9 @@ resource "aws_apigatewayv2_route" "get_product_by_id" {
   target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
 }
 
-resource "aws_apigatewayv2_route" "get_cars" {
+resource "aws_apigatewayv2_route" "get_categories" {
   api_id    = aws_apigatewayv2_api.api.id
-  route_key = "GET /cars"
+  route_key = "GET /categories"
   target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
 }
 

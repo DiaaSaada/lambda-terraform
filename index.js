@@ -27,9 +27,9 @@ export const handler = async (event) => {
       return response(200, products);
     }
 
-      // GET /products
-      if (method === "GET" && path === "/cars") {
-        return response(200, [{ id: "1", name: "Camry", price: 120000 }]);
+      // GET /categories
+      if (method === "GET" && path === "/categories") {
+        return response(200, [{ id: "1", name: "Electronics", description: "Electronic devices and accessories" }]);
       }
   
     // GET /products/{id}
